@@ -4,4 +4,5 @@ RUN apt-get update && \
     apt-get install -y cloud-utils genisoimage
 ADD run.sh /run.sh
 VOLUME /cloud-init
-CMD ["/run.sh"]
+RUN chmod +x /run.sh
+ENTRYPOINT ["/run.sh"]
